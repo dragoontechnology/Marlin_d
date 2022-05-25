@@ -69,7 +69,7 @@
 // @section info
 
 // Author info of this build printed to the host during boot and M115
-#define STRING_CONFIG_H_AUTHOR "(Chad, Ender-3 Max)" // Who made the changes.
+#define STRING_CONFIG_H_AUTHOR "(Sean, Ender 3)" // Who made the changes.
 //#define CUSTOM_VERSION_FILE Version.h // Path from the root directory (no quotes)
 
 /**
@@ -84,7 +84,7 @@
  */
 
 // Show the Marlin bootscreen on startup. ** ENABLE FOR PRODUCTION **
-#define SHOW_BOOTSCREEN
+//#define SHOW_BOOTSCREEN
 
 // Show the bitmap in Marlin/_Bootscreen.h on startup.
 // #define SHOW_CUSTOM_BOOTSCREEN
@@ -143,7 +143,7 @@
 #endif
 
 // Name displayed in the LCD "Ready" message and Info menu
-#define CUSTOM_MACHINE_NAME "Ender-3 Max 4.2.2"
+#define CUSTOM_MACHINE_NAME "Ender-3 4.2.2"
 
 // Printer's unique ID, used by some programs to differentiate between machines.
 // Choose your own or use a service like https://www.uuidgenerator.net/version4
@@ -1039,7 +1039,7 @@
 //#define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN
 
 // Force the use of the probe for Z-axis homing
-#define USE_PROBE_FOR_Z_HOMING // ENABLE FOR BLTOUCH - CHADDEVOPS
+#define USE_PROBE_FOR_Z_HOMING // ENABLE FOR BLTOUCH
 
 /**
  * Z_MIN_PROBE_PIN
@@ -1100,7 +1100,7 @@
 /**
  * The BLTouch probe uses a Hall effect sensor and emulates a servo.
  */
-#define BLTOUCH // ENABLE FOR BLTOUCH - CHADDEVOPS
+#define BLTOUCH // ENABLE FOR BLTOUCH
 
 /**
  * Touch-MI Probe by hotends.fr
@@ -1193,7 +1193,7 @@
  *     O-- FRONT --+
  */
 // Default stock - CHADDEVOPS
-#define NOZZLE_TO_PROBE_OFFSET {  50, -6, 0 }  // ENABLE FOR BLTOUCH - CHADDEVOPS
+#define NOZZLE_TO_PROBE_OFFSET {  -48, -8, 0 }  // ENABLE FOR BLTOUCH
 
 // Micro Swis Direct Drive with https://www.thingiverse.com/thing:4621096 fan shroud -  ENABLE FOR BLTOUCH - CHADDEVOPS - OPTIONAL
 //#define NOZZLE_TO_PROBE_OFFSET {  -47, -15, 0 }
@@ -1406,12 +1406,12 @@
 // @section machine
 
 // The size of the print bed
-#define X_BED_SIZE 305
-#define Y_BED_SIZE 305
+#define X_BED_SIZE 199 // to clear clips
+#define Y_BED_SIZE 199 // to clear clips
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
-#define X_MIN_POS 0
-#define Y_MIN_POS 0
+#define X_MIN_POS -2
+#define Y_MIN_POS -24
 #define Z_MIN_POS 0
 #define X_MAX_POS X_BED_SIZE
 #define Y_MAX_POS Y_BED_SIZE
@@ -1574,7 +1574,7 @@
  */
 //#define AUTO_BED_LEVELING_3POINT
 //#define AUTO_BED_LEVELING_LINEAR
-#define AUTO_BED_LEVELING_BILINEAR  // ENABLE FOR BLTOUCH - CHADDEVOPS
+#define AUTO_BED_LEVELING_BILINEAR  // ENABLE FOR BLTOUCH
 //#define AUTO_BED_LEVELING_UBL
 //#define MESH_BED_LEVELING
 
@@ -1641,7 +1641,7 @@
 #if EITHER(AUTO_BED_LEVELING_LINEAR, AUTO_BED_LEVELING_BILINEAR)
 
   // Set the number of grid points per dimension.
-  #define GRID_MAX_POINTS_X 3
+  #define GRID_MAX_POINTS_X 5
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
   // Probe along the Y axis, advancing X after each column
@@ -1705,7 +1705,7 @@
  * Add a bed leveling sub-menu for ABL or MBL.
  * Include a guided procedure if manual probing is enabled.
  */
-//#define LCD_BED_LEVELING
+#define LCD_BED_LEVELING  // Add bed leveling menu items.
 
 #if ENABLED(LCD_BED_LEVELING)
   #define MESH_EDIT_Z_STEP  0.025 // (mm) Step size while manually probing Z axis.
@@ -2219,7 +2219,7 @@
 // If you have a speaker that can produce tones, enable it here.
 // By default Marlin assumes you have a buzzer with a fixed frequency.
 //
-#define SPEAKER
+// #define SPEAKER //comment out to save space
 
 //
 // The duration and frequency for the UI feedback sound.
